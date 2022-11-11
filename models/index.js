@@ -7,7 +7,7 @@ const Sequelize = require("sequelize");
 // const process = require('process'); // 필요없음
 // const basename = path.basename(__filename); // 필요없음
 // const env = process.env.NODE_ENV || 'development'; // 필요없음
-const config = require(__dirname + "/../config/config.json")["production"];
+const config = require(__dirname + "/../config/config.json")["development"];
 // const a = require(__dirname + '/../config/config.json')
 // const a = {
 //   "development": {
