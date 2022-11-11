@@ -1,0 +1,4 @@
+development - 개발환경
+"127.0.0.1" - localhost와 같은 의미
+localhost -> 현재컴퓨터 내부주소, 외부접근 불가, 본인컴퓨터로만 접근 가능
+"dialect": "mysql" -> 어떤 관계형 언어를 쓰고있는지: mysql

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- jquery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>방명록</title>
+
+    <link rel="stylesheet" href="/static/css/visitor.css" />
+  </head>
+  <body>
+    <form name="visitor-form">
+      <fieldset>
+        <legend>방명록 등록</legend>
+        <input type="text" id="name" placeholder="사용자 이름" />
+        <br />
+        <input type="text" id="comment" placeholder="방명록" /> <br />
+        <div id="button-group">
+          <button type="button" onclick="createVisitor()">등록</button>
+        </div>
+      </fieldset>
+    </form>
+    <br />
+    <table border="1" cellspacing="0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>작성자</th>
+          <th>방명록</th>
+          <th>수정</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <!-- 추가되어야할 tr 위치 -> 종료태그의 앞(beforbegin) -->
+      <tbody>
+        <% for (let i = 0; i < data.length; i++) { %>
+        <!-- 추가되어야할 tr 위치 -> 종료태그의 앞(afterbegin) -->
+        <tr id="tr_<%= data[i].id %>">
+          <td><%= data[i].id %></td>
+          <td><%= data[i].name %></td>
+          <td><%= data[i].comment %></td>
+          <td>
+            <button type="button" onclick="editVisitor('<%= data[i].id %>')">
+              수정
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              onclick="deleteVisitor(this, '<%= data[i].id %>')"
+            >
+              삭제
+            </button>
+          </td>
+        </tr>
+        <% } %>
+        <!-- 추가되어야할 tr 위치 -> 종료태그의 앞(beforeend) 여기다 넣을예정! -->
+      </tbody>
+      <!-- 추가되어야할 tr 위치 -> 종료태그의 앞(afterend) -->
+    </table>
+
+    <script src="/static/js/visitor.js"></script>
+  </body>
+</html>
